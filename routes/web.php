@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\WaliMuridController;
+
+Route::get('/', [SiswaController::class, 'index'])->name('index');
+
+Route::resource('kelas', KelasController::class);
+Route::resource('wali-murid', WaliMuridController::class);
+Route::resource('siswa', SiswaController::class);
+

@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class wali_murid extends Model
 {
-    use HasFactory;
+   use HasFactory;
+
+   protected $fillable = ['nama_wali', 'kontak'];
+
+   public function siswas()
+   {
+       return $this->HasMany(siswa::class);
+   }
 }

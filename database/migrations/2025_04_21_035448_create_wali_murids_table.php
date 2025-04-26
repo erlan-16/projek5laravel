@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('wali_murids', function (Blueprint $table) {
             $table->id();
             $table->string('nama_wali');
-            $table->integer('kontak');
+            $table->char('kontak')->unique();
             $table->timestamps();
         });
     }

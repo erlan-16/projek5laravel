@@ -7,5 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class siswa extends Model
 {
-    use HasFactory;
+        use HasFactory;
+
+        protected $guarded = ['id'];
+
+        public function kelas()
+        {
+            return $this->belongsTo(kelas::class);
+        }
+
+        public function wali_murid()
+        {
+            return $this->belongsTo(wali_murid::class);
+        }
+
 }
